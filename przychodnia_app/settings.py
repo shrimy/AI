@@ -139,12 +139,13 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com' 
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-EMAIL_HOST_USER = 'prybka2@gmail.com'
-EMAIL_HOST_PASSWORD = 'gwsl theu thvd nnkd' 
+# change below to yours
+EMAIL_HOST_USER = '#'
+EMAIL_HOST_PASSWORD = '#'
 
 # captcha configuration
-RECAPTCHA_PUBLIC_KEY = '6Lf3BK0qAAAAAKfc9ox5x3NR-fL4cJBvIH64JXGa'
-RECAPTCHA_PRIVATE_KEY = '6Lf3BK0qAAAAAHHwxfrVaoZw5cYCN8EpUWlexFZ9'
+RECAPTCHA_PUBLIC_KEY = '#'
+RECAPTCHA_PRIVATE_KEY = '#'
 
 # security https configuration
 
