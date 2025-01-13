@@ -1,0 +1,43 @@
+{% extends 'main/base.html' %}
+{% load static %}
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<div class="container py-4">
+  <!-- Header -->
+  <div class="text-center md-4">
+    <h1 class="bg-purple text-black p-4">Welcome to House Vitalis - Your online health clinic!</h1>
+  </div>
+
+  <!-- Image and Welcome text -->
+  <div class="row align-items-center">
+    <!-- Text on the left -->
+    <div class="col-md-6">
+      <div class="text-box">
+        <p class="lead">
+          We are here to take care of your health and comfort by offering comprehensive medical care at your fingertips.
+        </p>
+        <p>
+          Our clinic provides quick and easy access to specialists, test results, and fast prescriptions. All this, so you
+          can take care of your health in the most convenient way for you.
+        </p>
+        <p>
+          Schedule an appointment, check available dates, consult test results – all in one place! We are ready to support
+          you in every situation, providing professional and caring medical assistance.
+        </p>
+      </div>
+      <a href="{% if user.is_authenticated %}{% url 'appointment' %}{% else %}{% url 'login' %}{% endif %}"
+        class="btn btn-primary d-block mx-auto">
+        Schedule an appointment
+      </a>
+    </div>
+
+    <!-- Image on the right -->
+    <div class="col-md-6 text-center">
+      <img src="{% static 'img/logo-clinic-1.png' %}" alt="House Vitalis Logo" class="img-fluid"
+        style="max-width: 400px;">
+    </div>
+  </div>
+</div>
+{% endblock %}
+

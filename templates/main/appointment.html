@@ -1,0 +1,126 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+{% block title %}Appointment{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card shadow">
+                <div class="card-header bg-primary text-white">
+                    <h3 class="mb-0">Create Appointment</h3>
+                </div>
+                <div class="card-body">
+                    <form method="post" id="appointment-form">
+                        {% csrf_token %}
+                        
+                        <!-- PESEL -->
+                        <div class="form-group mb-3">
+                            <label for="pesel" class="form-label">PESEL</label>
+                            <input type="text" id="pesel" name="pesel" class="form-control" 
+                                value="{{ form.pesel.value }}" required />
+                            {% if form.pesel.errors %}
+                                <div class="text-danger">
+                                    {% for error in form.pesel.errors %}
+                                        <p>{{ error }}</p>
+                                    {% endfor %}
+                                </div>
+                            {% endif %}
+                        </div>
+
+                        <!-- Choose Doctor -->
+                        <div class="form-group mb-3">
+                            <label for="doctor" class="form-label">Choose a doctor</label>
+                            <select id="doctor" name="doctor" class="form-control">
+                                <option value="">--Select Doctor--</option>
+                                {% for doctor in doctors %}
+                                <option value="{{ doctor.id }}" {% if form.doctor.value == doctor.id %}selected{% endif %}>
+                                    {{ doctor.first_name }} {{ doctor.last_name }}
+                                </option>
+                                {% endfor %}
+                            </select>
+                            {% if form.doctor.errors %}
+                                <div class="text-danger">
+                                    {% for error in form.doctor.errors %}
+                                        <p>{{ error }}</p>
+                                    {% endfor %}
+                                </div>
+                            {% endif %}
+                        </div>
+
+                        <!-- Choose Examination -->
+                        <div class="form-group mb-3">
+                            <label for="examination" class="form-label">Choose an examination</label>
+                            <select id="examination" name="examination" class="form-control">
+                                <option value="">--Select Examination--</option>
+                                {% for examination in form.examination.queryset %}
+                                    <option value="{{ examination.id }}" {% if form.examination.value == examination.id %}selected{% endif %}>
+                                        {{ examination.name }} - {{ examination.description }} (Price: {{ examination.price }} PLN)
+                                    </option>
+                                {% endfor %}
+                            </select>
+                            {% if form.examination.errors %}
+                                <div class="text-danger">
+                                    {% for error in form.examination.errors %}
+                                        <p>{{ error }}</p>
+                                    {% endfor %}
+                                </div>
+                            {% endif %}
+                        </div>
+
+                        <!-- Choose Date -->
+                        <div class="form-group mb-3">
+                            <label for="date" class="form-label">Choose a date</label>
+                            <input type="datetime-local" id="date" name="date" class="form-control" 
+                                   value="{{ form.date.value|date:'Y-m-d\TH:i' }}" required />
+                            {% if form.date.errors %}
+                                <div class="text-danger">
+                                    {% for error in form.date.errors %}
+                                        <p>{{ error }}</p>
+                                    {% endfor %}
+                                </div>
+                            {% endif %}
+                        </div>
+
+                        <!-- Instruction to choosing date -->
+                        <div class="form-group mb-3">
+                            <small class="form-text text-muted">
+                                <strong>Important:</strong>
+                                Please select a date that falls on a weekday (Monday to Friday). Appointments can only
+                                be booked between 08:00 AM and 06:00 PM, and the time must be a full hour (e.g., 09:00,
+                                not 09:30).
+                            </small>
+                        </div>
+
+                        <!-- Notes -->
+                        <div class="form-group mb-3">
+                            <label for="notes" class="form-label">Notes</label>
+                            <textarea id="notes" name="notes" class="form-control" rows="3">{{ form.notes.value }}</textarea>
+                        </div>
+
+                        <!-- Submit Button -->
+                        <button type="submit" class="btn btn-primary w-100">Submit</button>
+
+                        <br><br>
+
+                        <!-- Message -->
+                        {% if messages %}
+                        <div class="alert alert-success" role="alert">
+                            {% for message in messages %}
+                                <p>{{ message }}</p>
+                            {% endfor %}
+                        </div>
+                        {% endif %}
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script src="{% static 'appointment.js' %}"></script>
+
+
+{% endblock %}

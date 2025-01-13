@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+{% load static %}
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+    crossorigin="anonymous"></script>
+  <!-- Accesibility -->
+  <script src="https://website-widgets.pages.dev/dist/sienna.min.js" defer></script>
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="{% static 'style.css' %}">
+  <title>{% block title %}House Vitalis{% endblock %}</title>
+</head>
+
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-powder-pink rounded-bottom shadow-lg">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="{% url 'home' %}">House Vitalis</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'home' %}">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'about' %}">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'offer' %}">Offer</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'contact' %}">Contact</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'FAQ' %}">FAQ</a>
+          </li>
+        </ul>
+
+        <!-- Dynamic menu for login/logout -->
+        <div class="ms-auto">
+          {% if user.is_authenticated %}
+          <!-- Dropdown menu for authenticated users -->
+          <div class="ms-auto">
+            {% if user.is_authenticated %}
+            <!-- Dropdown menu for authenticated users -->
+            <ul class="navbar-nav">
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+                  aria-expanded="false">
+                  More
+                </a>
+                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item" href="{% url 'my_profile' %}">Profil</a></li>
+                  <li><a class="dropdown-item" href="{% url 'my_appointments' %}">My appointments</a></li>
+                  <li><a class="dropdown-item" href="{% url 'my_prescriptions' %}">My prescriptions</a></li>
+                  <li>
+                    <hr class="dropdown-divider">
+                  </li>
+                  <li>
+                    <form action="{% url 'logout' %}" method="post" class="dropdown-item">
+                      {% csrf_token %}
+                      <button type="submit" class="btn btn-link p-0 text-decoration-none">Log out</button>
+                    </form>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+            {% else %}
+            <!-- Buttons for non-authenticated users -->
+            <a href="{% url 'login' %}" class="btn btn-outline-primary me-2">Log In</a>
+            <a href="{% url 'signup' %}" class="btn btn-primary">Sign Up</a>
+            {% endif %}
+          </div>
+          {% else %}
+          <!-- Buttons for non-authenticated users -->
+          <a href="{% url 'login' %}" class="btn btn-custom-pink me-2 ">Log In</a>
+          <a href="{% url 'signup' %}" class="btn btn-custom-pink-outline">Sign Up</a>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main content -->
+  <main class="container py-4">
+    {% block content %}
+    {% endblock %}
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-powder-pink py-4 rounded-top shadow-lg">
+    <div class="container text-center text-md-start">
+      <div class="row">
+        <!-- Left Section -->
+        <div class="col-md-4 mb-4">
+          <h5 class="fw-bold">House Vitalis</h5>
+          <p>ul. Lwowska 1, 35-505 Rzeszów</p>
+          <p>tel. (+48) 607 056 554</p>
+          <p>fax. (+48) 554 553 234</p>
+          <p>email: housev@hv.pl</p>
+        </div>
+        <!-- Middle Section -->
+        <div class="col-md-4 mb-4">
+          <h5 class="fw-bold">Navigation</h5>
+          <p><a href="{% url 'home' %}" class="text-decoration-none">Home</a></p>
+          <p><a href="{% url 'about' %}" class="text-decoration-none">About</a></p>
+          <p><a href="{% url 'offer' %}" class="text-decoration-none">Offer</a></p>
+          <p><a href="{% url 'contact' %}" class="text-decoration-none">Contact</a></p>
+          <p><a href="{% url 'FAQ' %}" class="text-decoration-none">FAQ</a></p>
+        </div>
+        <!-- Right Section -->
+        <div class="col-md-4">
+          <img src="{% static 'img/logo-nfz.png' %}" class="img-fluid d-block mx-auto" alt="Narodowy Fundusz Zdrowia"
+            style="max-width: 300px;">
+            <p class="text-justify">We provide medical services under a contract with the National Health Fund.</p>
+        </div>
+      </div>
+    </div>
+    <div class="footer-line">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 text-center">
+            © Copyright House Vitalis Theme. All Rights Reserved.
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+
+</html>

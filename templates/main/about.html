@@ -1,0 +1,146 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+{% block title %}About{% endblock %}
+
+{% block content %}
+<div class="container py-4">
+    <div class="text-box">
+    <!-- Header -->
+    <div>
+        <h1 class="text-center bg-purple text-black p-4">Welcome to House Vitalis</h1>
+        <p class="text-justify">
+            Modern health clinic whose mission is to provide the highest quality medical care for patients from Rzeszów
+            and the surrounding area. For over a decade, we have been taking care of the health of our patients,
+            offering comprehensive specialist assistance, individual approach and access to the latest treatment
+            methods. Our clinic has been operating since 2010 and since then we have been constantly expanding our team
+            of specialists and the scope of services to meet your health needs.
+        </p>
+    </div>
+
+    <!-- Specializations -->
+    <div>
+        <h2 class="text-center">Our specializations</h2>
+
+        <!-- Specialization: Cardiology -->
+        <section class="specialization">
+            <div class="d-flex align-items-center mb-3 specialization-header">
+                <img src="{% static 'img/icon-cardiology.png' %}" alt="Cardiology Icon" class="specialization-icon me-3" width="80">
+                <h3 class="m-0">Cardiology</h3>
+            </div>
+            <p class="text-justify">
+                Cardiology is our leading specialization, where we focus on the diagnosis, prevention and treatment of
+                heart and circulatory system diseases. Our team of cardiologists provides a comprehensive approach and
+                access to modern research and technology.
+            </p>
+            <div class="row text-center">
+                <div class="col-md-4">
+                    <img src="{% static 'img/icon-male_doctor.png' %}" alt="Dr Jan Kowalski" class="rounded-circle" width="240">
+                    <h4>Dr Jan Kowalski</h4>
+                    <p>Cardiology specialist with 20 years of experience. Recognized as one of the best specialists in
+                        the region.</p>
+                </div>
+                <div class="col-md-4">
+                    <img src="{% static 'img/icon-female_doctor.png' %}" alt="Dr Maria Nowak" class="rounded-circle" width="240">
+                    <h4>Dr Maria Nowak</h4>
+                    <p>Pediatric cardiologist with many years of experience, specializing in the diagnosis of congenital
+                        heart muscle defects in the youngest patients.</p>
+                </div>
+                <div class="col-md-4">
+                    <img src="{% static 'img/icon-male_doctor.png' %}" alt="Dr Michał Lewicki" class="rounded-circle" width="240">
+                    <h4>Dr Michał Lewicki</h4>
+                    <p>Specialist in interventional cardiology, specializing in angioplasty and stenting procedures.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Specialization: Endocrinology -->
+        <section class="specialization">
+            <div class="d-flex align-items-center mb-3 specialization-header">
+                <img src="{% static 'img/icon-endocrynology.png' %}" alt="Endocrinology Icon" class="specialization-icon me-3" width="80">
+                <h3 class="m-0">Endocrinology</h3>
+            </div>
+            <p class="text-justify">
+                Endocrinology is a field that deals with the diagnosis and treatment of hormonal disorders that may
+                affect the metabolism, growth, development and functioning of many organs. Our team of endocrinologists
+                treats, among others: diabetes, thyroid diseases and hormonal disorders.
+            </p>
+            <div class="row text-center">
+                <div class="col-md-4">
+                    <img src="{% static 'img/icon-female_doctor.png' %}" alt="Dr Anna Majewska" class="rounded-circle" width="240">
+                    <h4>Dr Anna Majewska</h4>
+                    <p>Specialist in the treatment of diabetes and hormonal disorders in adults.</p>
+                </div>
+                <div class="col-md-4">
+                    <img src="{% static 'img/icon-female_doctor.png' %}" alt="Dr Ewa Kamińska" class="rounded-circle" width="240">
+                    <h4>Dr Ewa Kamińska</h4>
+                    <p>Endocrinologist specializing in diagnosing growth disorders and hormonal problems in children and
+                        adolescents.</p>
+                </div>
+                <div class="col-md-4">
+                    <img src="{% static 'img/icon-male_doctor.png' %}" alt="Dr Marek Sadowski" class="rounded-circle" width="240">
+                    <h4>Dr Marek Sadowski</h4>
+                    <p>Expert in the treatment of thyroid diseases such as Hashimoto's thyroiditis and hyperthyroidism.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Specialization: Neurology -->
+        <section class="specialization">
+            <div class="d-flex align-items-center mb-3 specialization-header">
+                <img src="{% static 'img/icon-neurology.png' %}" alt="Neurology Icon" class="specialization-icon me-3" width="80">
+                <h3 class="m-0">Neurology</h3>
+            </div>
+            <p class="text-justify">
+                Neurology is a key specialization of our clinic, dealing with the treatment of diseases of the nervous
+                system, such as migraine, epilepsy, degenerative diseases and multiple sclerosis. Our neurologists offer
+                comprehensive diagnostics and therapy of neurological disorders.
+            </p>
+            <div class="row text-center">
+                <div class="col-md-4">
+                    <img src="{% static 'img/icon-female_doctor.png' %}" alt="Dr Katarzyna Wójcik" class="rounded-circle" width="240">
+                    <h4>Dr Katarzyna Wójcik</h4>
+                    <p>Specialist in the treatment of migraines and neurological disorders related to stress.</p>
+                </div>
+                <div class="col-md-4">
+                    <img src="{% static 'img/icon-male_doctor.png' %}" alt="Dr Piotr Szulc" class="rounded-circle" width="240">
+                    <h4>Dr Piotr Szulc</h4>
+                    <p>A neurologist specializing in the treatment of multiple sclerosis and degenerative diseases of
+                        the nervous system.</p>
+                </div>
+                <div class="col-md-4">
+                    <img src="{% static 'img/icon-female_doctor.png' %}" alt="Dr Alicja Bielecka" class="rounded-circle" width="240">
+                    <h4>Dr Alicja Bielecka</h4>
+                    <p>Pediatric neurologist, specializing in the treatment of epilepsy and neurodevelopmental disorders
+                        in children.</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+
+
+    <!-- Awards -->
+    <div class="mt-4">
+        <h2 class="text-center">Our awards</h2>
+        <p>Over the years, we have won a number of awards and distinctions for our activities, including:</p>
+        <div class="row text-center">
+            <div class="col-md-4">
+                <img src="{% static 'img/icon-gold_medal.png' %}" alt="Award 1" width="240">
+                <p>Gold Medal of Medical Care</p>
+            </div>
+            <div class="col-md-4">
+                <img src="{% static 'img/icon-certyficate.png' %}" alt="Award 2" width="240">
+                <p>Medical Quality Certificate</p>
+            </div>
+            <div class="col-md-4">
+                <img src="{% static 'img/icon-health_leader.png' %}" alt="Award 3" width="240">
+                <p>Rzeszów Health Leader Award</p>
+            </div>
+        </div>
+        <p>We cordially invite you to familiarize yourself with our offer and use our services - we are here to take care of your health!</p>
+    </div>
+    </div>
+</div>
+{% endblock %}

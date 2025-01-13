@@ -1,0 +1,59 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+{% block title %}Contact{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+    <div class="text-box">
+    <div class="text-center mb-5">
+        <h1 class="bg-purple text-black p-4">Contact Us</h1>
+        <p>We would love to hear from you. Feel free to contact us using the form below or via the details provided.</p>
+    </div>
+
+    <div class="row">
+        <!-- Contact Info Section -->
+        <div class="col-md-6 mb-4">
+            <h3>Our Contact Information</h3>
+            <p><strong>House Vitalis</strong></p>
+            <p>ul. Zdrowa 1, 35-505 Rzeszów</p>
+            <p>Phone: (+48) 607 056 554</p>
+            <p>Fax: (+48) 554 553 234</p>
+            <p>Email: <a href="mailto:housev@hv.pl">housev@hv.pl</a></p>
+            <p>Business hours: Mon-Fri: 8:00 AM - 6:00 PM</p>
+
+            <h3>Follow Us</h3>
+            <p>Stay connected with us through social media:</p>
+            <a href="https://www.facebook.com/HouseVitalis" target="_blank" class="me-2">
+                <img src="{% static 'img/icon-facebook.png' %}" alt="Facebook" class="social-icon" width="50">
+            </a>
+            <a href="https://www.instagram.com/HouseVitalis" target="_blank" class="me-2">
+                <img src="{% static 'img/icon-instagram.png' %}" alt="Instagram" class="social-icon" width="50">
+            </a>            
+        </div>
+
+        <!-- Contact Form Section -->
+        <div class="col-md-6 mb-4">
+            <h3>Contact Form</h3>
+            <form method="POST" action="{% url 'send_message' %}">
+                {% csrf_token %}
+                <div class="mb-3">
+                    <label for="name" class="form-label">Your Name</label>
+                    <input type="text" class="form-control" id="name" name="name" required>
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Your Email</label>
+                    <input type="email" class="form-control" id="email" name="email" required>
+                </div>
+                <div class="mb-3">
+                    <label for="message" class="form-label">Your Message</label>
+                    <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Send Message</button>
+            </form>
+        </div>
+
+    </div>
+    </div>
+</div>
+{% endblock %}

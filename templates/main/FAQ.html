@@ -1,0 +1,136 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+{% block title %}FAQ{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+    <div class="text-box">
+    <div class="text-center mb-5">
+        <h1 class="bg-purple text-black p-4">Frequently Asked Questions (FAQ)</h1>
+        <p>Here you can find answers to the most commonly asked questions.</p>
+    </div>
+
+    <!-- FAQ Accordion -->
+    <div class="accordion" id="faqAccordion">
+        <!-- Question 1 -->
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingOne">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
+                    aria-expanded="true" aria-controls="collapseOne">
+                    What services do you offer?
+                </button>
+            </h2>
+            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+                data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                    We offer a wide range of medical services including cardiology, endocrinology, neurology, and more.
+                    Our services are provided by experienced specialists.
+                </div>
+            </div>
+        </div>
+
+        <!-- Question 2 -->
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingTwo">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                    How can I schedule an appointment?
+                </button>
+            </h2>
+            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                    You can schedule an appointment by visiting our "Offer" page or contacting us directly through our
+                    phone number or email. We are available Monday to Friday from 8:00 AM to 6:00 PM.
+                </div>
+            </div>
+        </div>
+
+        <!-- Question 3 -->
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingThree">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                    Are your services covered by insurance?
+                </button>
+            </h2>
+            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+                data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                    Yes, we provide medical services under a contract with the National Health Fund (NFZ). You can use
+                    your insurance for covered services.
+                </div>
+            </div>
+        </div>
+
+        <!-- Question 4 -->
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingFour">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                    What are your business hours?
+                </button>
+            </h2>
+            <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
+                data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                    Our business hours are from Monday to Friday, 8:00 AM to 6:00 PM. We are closed on weekends.
+                </div>
+            </div>
+        </div>
+
+        <!-- Question 5 -->
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingFive">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                    How do I contact your team?
+                </button>
+            </h2>
+            <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive"
+                data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                    You can contact us by phone, email, or by visiting us at our office. Our contact information is
+                    available on the "Contact" page.
+                </div>
+            </div>
+        </div>
+
+        <!-- New Question 6 -->
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingSix">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                    Where can I find my prescriptions and appointments?
+                </button>
+            </h2>
+            <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix"
+                data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                    Your prescriptions and appointment details can be found in the dropdown menu available after logging
+                    in to your account. You can access this information anytime through your profile.
+                </div>
+            </div>
+        </div>
+
+        <!-- New Question 7 -->
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingSeven">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
+                    I have other questions. How can I reach you?
+                </button>
+            </h2>
+            <div id="collapseSeven" class="accordion-collapse collapse" aria-labelledby="headingSeven"
+                data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                    If you have any other questions, feel free to contact us through the "Contact" page. You can use the
+                    contact form there to send us a message directly, and we will respond as soon as possible.
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+</div>
+{% endblock %}

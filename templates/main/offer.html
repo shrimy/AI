@@ -1,0 +1,185 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+{% block title %}Offer{% endblock %}
+
+{% block content %}
+<div class="container py-4">
+    <div class="text-box">
+    <!-- Header -->
+    <div class="text-center mb-4">
+        <h1 class="bg-purple text-black p-4">Our Offer</h1>
+        <h3 align="left">Discover the wide range of services we provide to meet your health needs.</h3>
+        <p align="justify">
+            At our clinic, we are committed to providing comprehensive, personalized care to ensure your well-being. Our expert doctors, equipped with the latest medical technologies, offer a wide variety of diagnostic tests and treatments tailored to your specific health concerns. Whether you're seeking preventive care or dealing with a specific medical issue, our services are designed to address your needs with precision and care.
+        </p>
+        <p align="justify">
+            We specialize in cardiology, endocrinology, and neurology, offering in-depth diagnostics and effective treatment options. From heart health assessments and hormonal balance checks to brain scans and neurological evaluations, our team is here to help you lead a healthier life.  
+        </p>
+        <p align="justify"> 
+            Regular check-ups and early detection can make all the difference, which is why we encourage you to take the next step in your health journey today. Schedule an appointment with our experienced doctors, and let us assist you in maintaining or improving your health.  
+        </p>
+        <p align="justify">
+            Take control of your health—schedule your consultation today and benefit from the expertise of our specialists.
+        </p>
+    </div>
+
+    <div>
+        <h2 class="text-center mb-4">Our Services</h2>
+
+        <!-- Cardiology -->
+        <section class="offer-item mb-5">
+            <div class="d-flex align-items-center">
+                <img src="{% static 'img/icon-cardiology.png' %}" alt="Cardiology Icon" class="offer-icon me-3"
+                    width="80">
+                <h3 class="m-0">Cardiology Services</h3>
+            </div>
+            <p>
+                Comprehensive diagnostics, prevention, and treatment of heart diseases. Our cardiology specialists use
+                advanced technologies to ensure accurate diagnosis and effective therapy.
+            </p>
+            <table class="table table-bordered">
+                <thead class="table-light">
+                    <tr>
+                        <th>Service</th>
+                        <th>Description</th>
+                        <th>Price</th>
+                        <th>Doctor</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Echocardiogram</td>
+                        <td>Ultrasound imaging to assess the heart's structure and function.</td>
+                        <td>$150</td>
+                        <td>Dr. Jan Kowalski</td>
+                    </tr>
+                    <tr>
+                        <td>Stress Test</td>
+                        <td>A test to monitor heart function during physical activity.</td>
+                        <td>$200</td>
+                        <td>Dr. Maria Nowak</td>
+                    </tr>
+                    <tr>
+                        <td>Cardiology Consultation</td>
+                        <td>Comprehensive evaluation of heart health with lifestyle guidance.</td>
+                        <td>$100</td>
+                        <td>Dr. Michał Lewicki, Dr. Maria Nowak</td>
+                    </tr>
+                    <tr>
+                        <td>Holter Monitor</td>
+                        <td>Continuous recording of heart activity over 24-48 hours.</td>
+                        <td>$120</td>
+                        <td>Dr. Jan Kowalski</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Endocrinology -->
+        <section class="offer-item mb-5">
+            <div class="d-flex align-items-center">
+                <img src="{% static 'img/icon-endocrynology.png' %}" alt="Endocrinology Icon" class="offer-icon me-3"
+                    width="80">
+                <h3 class="m-0">Endocrinology Services</h3>
+            </div>
+            <p>
+                Specialized treatment of hormonal disorders, including thyroid diseases, diabetes, and growth issues.
+                Our experts ensure personalized care for every patient.
+            </p>
+            <table class="table table-bordered">
+                <thead class="table-light">
+                    <tr>
+                        <th>Service</th>
+                        <th>Description</th>
+                        <th>Price</th>
+                        <th>Doctor</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Thyroid Function Test</td>
+                        <td>A blood test to measure thyroid hormone levels.</td>
+                        <td>$80</td>
+                        <td>Dr. Anna Majewska</td>
+                    </tr>
+                    <tr>
+                        <td>Hormonal Panel</td>
+                        <td>Comprehensive blood tests to assess hormone balance.</td>
+                        <td>$120</td>
+                        <td>Dr. Ewa Kamińska</td>
+                    </tr>
+                    <tr>
+                        <td>Endocrinology Consultation</td>
+                        <td>Detailed evaluation of hormonal health and treatment planning.</td>
+                        <td>$100</td>
+                        <td>Dr. Marek Sadowski, Dr. Anna Majewska</td>
+                    </tr>
+                    <tr>
+                        <td>Diabetes Screening</td>
+                        <td>Blood tests to detect early signs of diabetes.</td>
+                        <td>$60</td>
+                        <td>Dr. Anna Majewska</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Neurology -->
+        <section class="offer-item mb-5">
+            <div class="d-flex align-items-center">
+                <img src="{% static 'img/icon-neurology.png' %}" alt="Neurology Icon" class="offer-icon me-3"
+                    width="80">
+                <h3 class="m-0">Neurology Services</h3>
+            </div>
+            <p>
+                Expert diagnosis and treatment of neurological disorders, such as migraines, epilepsy, and multiple
+                sclerosis. Our neurologists provide tailored therapy for your needs.
+            </p>
+            <table class="table table-bordered">
+                <thead class="table-light">
+                    <tr>
+                        <th>Service</th>
+                        <th>Description</th>
+                        <th>Price</th>
+                        <th>Doctor</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>EEG Test</td>
+                        <td>Recording of brain electrical activity to diagnose epilepsy and other conditions.</td>
+                        <td>$120</td>
+                        <td>Dr. Katarzyna Wójcik</td>
+                    </tr>
+                    <tr>
+                        <td>Neurology Consultation</td>
+                        <td>Comprehensive assessment of neurological symptoms and treatment recommendations.</td>
+                        <td>$100</td>
+                        <td>Dr. Piotr Szulc, Dr. Katarzyna Wójcik</td>
+                    </tr>
+                    <tr>
+                        <td>MRI (Brain)</td>
+                        <td>Detailed imaging of the brain to detect structural abnormalities.</td>
+                        <td>$500</td>
+                        <td>Dr. Alicja Bielecka</td>
+                    </tr>
+                    <tr>
+                        <td>Nerve Conduction Study</td>
+                        <td>Test to measure electrical activity in nerves and muscles.</td>
+                        <td>$150</td>
+                        <td>Dr. Alicja Bielecka</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </div>
+
+    <!-- Call-to-action -->
+    <div class="text-center mt-5">
+        <p class="lead">Interested in any of our services?</p>
+        <a href="{% url 'appointment' %}" class="btn btn-primary">Schedule an Appointment</a>
+    </div>
+    </div>
+</div>
+{% endblock %}
