@@ -1,5 +1,7 @@
 # Aplikacja internetowa przychodni z systemem rejestracji wizyt i ochroną danych pacjentów
 
+![Apka](https://github.com/user-attachments/assets/12e2d025-0f39-45cc-a470-858e006685ca)
+
 ## Opis
 Projekt skupia się na zaimplementowaniu aplikację internetową dla przychodni medycznej, której celem jest umożliwienie pacjentom dostępu do szybkiej i skutecznej opieki medycznej oraz zapewnienie bezpieczeństwa danych pacjentów. System umożliwia rejestrację wizyt, zarządzanie danymi pacjentów oraz ochronę danych medycznych.
 
