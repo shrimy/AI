@@ -86,13 +86,12 @@ WSGI_APPLICATION = 'przychodnia_app.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'Przychodnia',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'przychodnia_db',
         'USER': 'postgres',
-        'PASSWORD': 'admin',
+        'PASSWORD': 'postgres',
+        'HOST': 'db',
         'PORT': '5432',
-        'HOST': 'localhost',
-
     }
 }
 
