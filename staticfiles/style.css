@@ -1,0 +1,87 @@
+body {
+    font-family: 'Roboto', sans-serif;
+
+    background-image: url("img/logo-bg-1.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+}
+
+.bg-powder-pink {
+    background-color: #F5D0C5 !important;
+}
+
+.btn-custom-pink {
+    background-color: #f06292;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    font-size: 1rem;
+    transition: background-color 0.3s, transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.btn-custom-pink-outline {
+    background-color: transparent;
+    color: #f06292;
+    border: 2px solid #f06292;
+    padding: 8px 16px;
+    font-size: 1rem;
+    transition: background-color 0.3s, color 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.btn-custom-pink:hover {
+    background-color: #e91e63;
+    color: white;
+    transform: scale(1);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.btn-custom-pink-outline:hover {
+    background-color: #f06292;
+    color: white;
+    transform: scale(1);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.btn-custom-pink:focus,
+.btn-custom-pink-outline:focus {
+    box-shadow: 0 0 0 0.2rem rgba(240, 98, 146, 0.5);
+}
+
+.btn-custom-pink:active,
+.btn-custom-pink-outline:active {
+    background-color: #e91e63;
+    border-color: #e91e63;
+}
+
+.text-box {
+    background-color: rgba(245, 208, 197, 0.7);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.text-box p {
+    color: #000000;
+}
+
+.btn-primary {
+    margin-top: 20px;
+    background-color: #f06292;
+    border: #f06292;
+}
+
+.btn-primary:hover {
+    margin-top: 20px;
+    background-color: #e91e63;
+    border: #e91e63;
+}
+
+.bg-primary {
+    background-color: #f06292 !important;
+    border: #f06292 !important;
+}
