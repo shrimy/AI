@@ -1,0 +1,28 @@
+name: Build and Push Docker image to Azure Container Registry
+
+on:
+  push:
+    branches:
+      - master  # lub inna gałąź, której używasz
+
+jobs:
+  build-and-push:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    - name: Login to Azure CLI
+      uses: azure/login@v1
+      with:
+        creds: ${{ secrets.azure-credentials }}
+
+    - name: Build Docker image
+      run: |
+        docker build -t przychodniaacr123.azurecr.io/przychodnia-app:${{ github.sha }} .
+
+    - name: Push Docker image to ACR
+      run: |
+        echo "${{ secrets.ACR_PASSWORD }}" | docker login przychodniaacr123.azurecr.io -u przychodniaacr123 --password-stdin
+        docker push przychodniaacr123.azurecr.io/przychodnia-app:${{ github.sha }}
