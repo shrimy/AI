@@ -41,15 +41,15 @@ jobs:
 
     - name: Deploy DB
       run: |
-        kubectl apply -f k8s/db-deployment-github.yaml
-        kubectl apply -f k8s/db-service-github.yaml
-        kubectl apply -f k8s/db-secret-github.yaml
-        kubectl apply -f k8s/postgres-pvc-github.yaml
+        kubectl apply -f .github/workflows/k8s/db-deployment-github.yaml
+        kubectl apply -f .github/workflows/k8s/db-service-github.yaml
+        kubectl apply -f .github/workflows/k8s/db-secret-github.yaml
+        kubectl apply -f .github/workflows/k8s/postgres-pvc-github.yaml
 
     - name: Wait for DB rollout
       run: kubectl rollout status deployment/db-deployment --timeout=120s
 
     - name: Deploy App
       run: |
-        kubectl apply -f k8s/app-deployment-github.yaml
-        kubectl apply -f k8s/app-service-github.yaml
+        kubectl apply -f .github/workflows/k8s/app-deployment-github.yaml
+        kubectl apply -f .github/workflows/k8s/app-service-github.yaml
