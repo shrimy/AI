@@ -26,3 +26,30 @@ jobs:
       run: |
         echo "${{ secrets.ACR_PASSWORD }}" | docker login przychodniaacr123.azurecr.io -u przychodniaacr123 --password-stdin
         docker push przychodniaacr123.azurecr.io/przychodnia-app:${{ github.sha }}
+
+    - name: Set up kubectl
+      uses: azure/setup-kubectl@v3
+      with:
+        version: 'latest'
+
+    - name: Get AKS credentials
+      uses: azure/aks-set-context@v2
+      with:
+        creds: ${{ secrets.AZURE_CREDENTIALS }}
+        cluster-name: MyAKSCluster      # <-- podmień na nazwę swojego klastra
+        resource-group: MyResourceGroup # <-- podmień na swoją grupę zasobów
+
+    - name: Deploy DB
+      run: |
+        kubectl apply -f k8s/db-deployment-github.yaml
+        kubectl apply -f k8s/db-service-github.yaml
+        kubectl apply -f k8s/db-secret-github.yaml
+        kubectl apply -f k8s/postgres-pvc-github.yaml
+
+    - name: Wait for DB rollout
+      run: kubectl rollout status deployment/db-deployment --timeout=120s
+
+    - name: Deploy App
+      run: |
+        kubectl apply -f k8s/app-deployment-github.yaml
+        kubectl apply -f k8s/app-service-github.yaml
