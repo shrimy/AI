@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: app-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: przychodnia-app
+  template:
+    metadata:
+      labels:
+        app: przychodnia-app
+    spec:
+      containers:
+      - name: app
+        image: przychodniaacr123.azurecr.io/przychodnia-app:__IMAGE_TAG__  # <-- tag z GitHub Actions
+        ports:
+        - containerPort: 8000
+        env:
+        - name: DJANGO_SECRET_KEY
+          valueFrom:
+            secretKeyRef:
+              name: db-secret
+              key: DJANGO_SECRET_KEY
+        - name: DJANGO_DEBUG
+          value: "True"
+        - name: DJANGO_ALLOWED_HOSTS
+          value: "localhost,127.0.0.1,132.220.58.117,132.220.0.199"
+        - name: POSTGRES_DB
+          value: "przychodnia_db"
+        - name: POSTGRES_USER
+          value: "postgres"
+        - name: POSTGRES_PASSWORD
+          value: "postgres"
+        - name: POSTGRES_HOST
+          value: "db-service"
+        - name: POSTGRES_PORT
+          value: "5432"
