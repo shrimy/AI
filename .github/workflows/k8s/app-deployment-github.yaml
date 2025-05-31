@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: app
-        image: przychodniaacr123.azurecr.io/przychodnia-app:__IMAGE_TAG__  # <-- tag z GitHub Actions
+        image: przychodniaacr123.azurecr.io/przychodnia-app:${{ github.sha }}
         ports:
         - containerPort: 8000
         env:

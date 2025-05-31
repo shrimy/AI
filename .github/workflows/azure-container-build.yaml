@@ -27,6 +27,9 @@ jobs:
         echo "${{ secrets.ACR_PASSWORD }}" | docker login przychodniaacr123.azurecr.io -u przychodniaacr123 --password-stdin
         docker push przychodniaacr123.azurecr.io/przychodnia-app:${{ github.sha }}
 
+    - name: Replace image tag in deployment yaml
+      run: sed -i "s/__IMAGE_TAG__/${{ github.sha }}/g" .github/workflows/k8s/app-deployment-github.yaml
+
     - name: Set up kubectl
       uses: azure/setup-kubectl@v3
       with:
